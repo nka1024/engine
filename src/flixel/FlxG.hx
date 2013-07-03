@@ -92,6 +92,11 @@ class FlxG
 	 */
 	static public var autoPause:Bool;
 	/**
+	 * Applies smoothing to rotated / scaled sprites by default. Set this to true for smooth high resolution games, leave it off for pixelated games.
+	 * Setting this to true will slow down rendering on the Flash target (native targets are hardware accellerated, so this isn't much of a problem).
+	 */
+	static public var antialiasByDefault:Bool;
+	/**
 	 * Represents the amount of time in seconds that passed since last frame.
 	 */
 	static public var elapsed:Float;
@@ -116,6 +121,11 @@ class FlxG
 	 * while denser collision activity usually profits from more. Default value is 6.
 	 */
 	static public var worldDivisions:Int;
+	/**
+	 * By default this just refers to the first entry in the <code>FlxG.cameras.list</code> 
+	 * array but you can do what you like with it.
+	 */
+	static public var camera:FlxCamera;
 	
 	/**
 	 * Useful helper objects for doing Flash-specific rendering.

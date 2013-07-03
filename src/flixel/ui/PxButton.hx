@@ -1,15 +1,18 @@
-package flixel.text.pxText;
+package flixel.ui;
 
 import flixel.system.FlxAssets;
+import flixel.text.FlxBitmapTextField;
+import flixel.text.pxText.PxBitmapFont;
+import flixel.text.pxText.PxTextAlign;
 import flixel.ui.FlxTypedButton;
 import flixel.util.FlxPoint;
 
 /**
- * A simple button class that calls a function when clicked by the mouse.
+ * A button with a bitmap text field for the label
  */
 class PxButton extends FlxTypedButton<FlxBitmapTextField>
 {
-	public function new(X:Float = 0, Y:Float = 0, Label:String = null, OnClick:Dynamic->Void = null)
+	public function new(X:Float = 0, Y:Float = 0, ?Label:String, ?OnClick:Dynamic)
 	{
 		super(X, Y, Label, OnClick);
 		
@@ -40,6 +43,7 @@ class PxButton extends FlxTypedButton<FlxBitmapTextField>
 	override private function resetHelpers():Void
 	{
 		super.resetHelpers();
+		
 		if (label != null)
 		{
 			label.setWidth(Std.int(width));
@@ -49,6 +53,7 @@ class PxButton extends FlxTypedButton<FlxBitmapTextField>
 	override public function update():Void
 	{
 		super.update();
+		
 		if (label != null)
 		{
 			label.update();

@@ -240,7 +240,7 @@ class FlxSprite extends FlxObject
 		#else
 		_blend = null;
 		#end
-		antialiasing = false;
+		antialiasing = FlxG.antialiasByDefault;
 		cameras = null;
 		
 		finished = false;
@@ -1745,7 +1745,7 @@ class FlxSprite extends FlxObject
 	{
 		if (Camera == null)
 		{
-			Camera = FlxG.cameras.defaultCamera;
+			Camera = FlxG.camera;
 		}
 		getScreenXY(_point, Camera);
 		_point.x = _point.x - offset.x;
@@ -1795,7 +1795,7 @@ class FlxSprite extends FlxObject
 	{
 		if (Camera == null)
 		{
-			Camera = FlxG.cameras.defaultCamera;
+			Camera = FlxG.camera;
 		}
 		getScreenXY(_point, Camera);
 		_point.x = _point.x - offset.x;
@@ -2094,7 +2094,7 @@ class FlxSprite extends FlxObject
 
 		if (Camera == null)
 		{
-			Camera = FlxG.cameras.defaultCamera;
+			Camera = FlxG.camera;
 		}
 		var X:Float = point.x - Camera.scroll.x;
 		var Y:Float = point.y - Camera.scroll.y;
